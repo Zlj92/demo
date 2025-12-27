@@ -1,0 +1,41 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--body_bg);
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  height: 60px;
+  width: calc(100% - 120px);
+  padding: 0 60px;
+  align-items: center;
+  background-color: var(--nav_bg);
+}
+nav .left {
+  width: 60%;
+}
+nav .right {
+  width: 40%;
+}
+nav a {
+  margin-right: 10px;
+  color: var(--nav_color);
+}
+nav a:last-child {
+  margin-right: 0;
+}
+
+main {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: var(--main_color);
+}/*# sourceMappingURL=style.css.map */

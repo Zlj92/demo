@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ <link rel="stylesheet" href="./scss/style.css">
+</head>
+<body>
+  <div id="app">
+    <link rel="stylesheet" :href=`./scss/${theme}.css`>
+  <nav>
+    <div class="left">
+      <a href="">首页</a>
+      <a href="">新闻</a>
+      <a href="">文章</a>
+      <a href="">大事件</a>
+    </div>
+    <div class="right">
+      <a href="" @click="changeTheme('dark')">深色主题</a>
+      <a href="" @click="changeTheme('default')">默认主题</a>
+      <a href="">登录</a>
+      <a href="">注册</a>
+    </div>
+  </nav>
+  <main>前端主题设置</main>
+  </div>
+  <script>
+    const { createApp } = Vue
+    createApp({
+      data() {
+        return {
+          theme: 'default'
+        }
+      },
+      created(){
+        this.theme = localStorage.getItem('theme') || 'default'
+        
+      },
+      methods:{
+        changeTheme(theme){
+          this.theme=theme
+          localStorage.setItem('theme',theme)
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
